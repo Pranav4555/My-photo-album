@@ -1,8 +1,8 @@
 import React from 'react';
-import PhotoAlbum from './PhotoAlbum';
+import PhotoAlbumBook from './PhotoAlbum';
 
 function App() {
-  return <PhotoAlbum />;
+  return <PhotoAlbumBook />;
 }
 
 export default App;
