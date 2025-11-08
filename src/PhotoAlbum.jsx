@@ -209,7 +209,7 @@ const PhotoAlbumBook = () => {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [currentSpread, isFlipping]);
+  }, [currentSpread, isFlipping, nextSpread, prevSpread]);
 
   const nextSpread = useCallback(() => {
     if (currentSpread < photoSpreads.length - 1 && !isFlipping) {
