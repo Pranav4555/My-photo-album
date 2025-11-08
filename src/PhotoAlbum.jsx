@@ -201,16 +201,6 @@ const PhotoAlbumBook = () => {
     }
   }, [currentSpread]);
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === 'ArrowRight') nextSpread();
-      if (e.key === 'ArrowLeft') prevSpread();
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [currentSpread, isFlipping, nextSpread, prevSpread]);
-
   const nextSpread = useCallback(() => {
     if (currentSpread < photoSpreads.length - 1 && !isFlipping) {
       setFlipDirection('next');
@@ -232,6 +222,16 @@ const PhotoAlbumBook = () => {
       }, 650);
     }
   }, [currentSpread, isFlipping]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === 'ArrowRight') nextSpread();
+      if (e.key === 'ArrowLeft') prevSpread();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [nextSpread, prevSpread]);
 
   const toggleBookmark = () => {
     setBookmarks((prev) =>
