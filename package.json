@@ -2,6 +2,7 @@
   "name": "my-photo-album",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Pranav4555.github.io/My-photo-album",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -17,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17"
   }
